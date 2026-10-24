@@ -1,0 +1,9 @@
+{
+  "uuid": "kaggle-status@hamim.local",
+  "name": "Kaggle Status",
+  "description": "Multi-account Kaggle GPU/TPU quota in the top bar, running notebook sessions, a kernel browser and cross-account runs with live output.",
+  "shell-version": ["49", "50", "51"],
+  "settings-schema": "org.gnome.shell.extensions.kaggle-status",
+  "version": 1,
+  "version-name": "1.0.0"
+}

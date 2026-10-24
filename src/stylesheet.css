@@ -1,0 +1,56 @@
+/* Kaggle Status */
+.kg-panel { spacing: 6px; }
+.kg-panel-text { font-weight: 600; font-size: 0.95em; }
+.kg-badge { font-size: 0.8em; font-weight: 700; padding: 1px 7px; border-radius: 999px; background-color: rgba(128,128,128,0.25); }
+.kg-badge-active { background-color: #20beff; color: #04202c; }
+
+.kg-menu { min-width: 340px; }
+.kg-wrap-item { padding: 0; }
+.kg-body { spacing: 8px; padding: 6px 8px; min-width: 330px; }
+.kg-head { spacing: 8px; padding: 2px 2px 4px 2px; }
+.kg-title { font-weight: 700; font-size: 1.15em; color: #f2f2f2; }
+.kg-card-title, .kg-key, .kg-value, .kg-kernel-title, .kg-panel-text { color: #f2f2f2; }
+.kg-sub { font-size: 0.85em; color: rgba(150,150,150,1); }
+.kg-key { font-size: 0.9em; font-weight: 600; margin-right: 8px; }
+.kg-value { font-size: 0.9em; }
+.kg-section { font-size: 0.8em; font-weight: 700; letter-spacing: 1px; color: rgba(150,150,150,1); margin-top: 4px; }
+.kg-warn { color: #f5a524; font-size: 0.9em; }
+.kg-card { background-color: rgba(128,128,128,0.12); border-radius: 12px; padding: 10px 12px; spacing: 6px; }
+.kg-card-title { font-weight: 600; }
+.kg-disabled { opacity: 0.5; }
+.kg-quota-row { spacing: 3px; }
+.kg-dot { width: 9px; height: 9px; border-radius: 9px; margin-right: 8px; }
+.kg-icon-btn { padding: 6px; border-radius: 999px; }
+.kg-icon-btn:hover, .kg-icon-btn:focus { background-color: rgba(128,128,128,0.25); }
+.kg-action { font-weight: 600; }
+
+.kg-run-row { border-radius: 10px; padding: 8px 10px; background-color: rgba(128,128,128,0.08); }
+.kg-run-row:hover, .kg-run-row:focus { background-color: rgba(128,128,128,0.2); }
+.kg-kernel-title { font-weight: 600; }
+
+.kg-pill { font-size: 0.75em; font-weight: 700; padding: 2px 9px; border-radius: 999px; }
+.kg-pill-active { background-color: rgba(32,190,255,0.22); color: #20beff; }
+.kg-pill-idle { background-color: rgba(128,128,128,0.22); }
+.kg-pill-error { background-color: rgba(243,18,96,0.22); color: #f31260; }
+
+/* dialogs */
+.kg-dialog { min-width: 560px; }
+.kg-dialog-body { spacing: 10px; min-width: 540px; }
+.kg-output-dialog { min-width: 720px; }
+.kg-output-dialog .kg-dialog-body { min-width: 700px; }
+.kg-row { spacing: 8px; }
+.kg-chip { padding: 4px 12px; border-radius: 999px; background-color: rgba(128,128,128,0.2); font-size: 0.9em; }
+.kg-chip:hover { background-color: rgba(128,128,128,0.32); }
+.kg-chip:checked { background-color: #20beff; color: #04202c; font-weight: 700; }
+.kg-search { padding: 7px 12px; border-radius: 10px; }
+.kg-list-scroll { min-height: 260px; max-height: 340px; }
+.kg-list { spacing: 4px; padding-right: 6px; }
+.kg-kernel { padding: 8px 12px; border-radius: 10px; background-color: rgba(128,128,128,0.1); text-align: left; }
+.kg-kernel:hover, .kg-kernel:focus { background-color: rgba(128,128,128,0.22); }
+.kg-kernel:selected { background-color: rgba(32,190,255,0.28); }
+.kg-tag { font-size: 0.7em; font-weight: 700; padding: 1px 6px; margin-left: 6px; border-radius: 6px; background-color: rgba(128,128,128,0.28); }
+.kg-log-scroll { min-height: 320px; max-height: 420px; background-color: rgba(0,0,0,0.35); border-radius: 10px; }
+.kg-log { font-family: monospace; padding: 10px 12px; color: #d8d8d8; }
+.kg-files { spacing: 2px; }
+.kg-link { color: #20beff; padding: 2px 0; text-align: left; }
+.kg-link:hover { text-decoration: underline; }

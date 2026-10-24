@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <enum id="org.gnome.shell.extensions.kaggle-status.PanelMode">
+    <value value="0" nick="combined"/>
+    <value value="1" nick="per-account"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.kaggle-status.Resource">
+    <value value="0" nick="gpu"/>
+    <value value="1" nick="tpu"/>
+    <value value="2" nick="worst"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.kaggle-status.Position">
+    <value value="0" nick="left"/>
+    <value value="1" nick="center"/>
+    <value value="2" nick="right"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.kaggle-status.Badge">
+    <value value="0" nick="when-running"/>
+    <value value="1" nick="always"/>
+    <value value="2" nick="never"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.kaggle-status.ValueMode">
+    <value value="0" nick="used"/>
+    <value value="1" nick="left"/>
+  </enum>
+
+  <schema id="org.gnome.shell.extensions.kaggle-status" path="/org/gnome/shell/extensions/kaggle-status/">
+    <!-- General -->
+    <key name="token-dir" type="s"><default>''</default>
+      <summary>Directory holding one Kaggle token file per account</summary></key>
+    <key name="poll-interval" type="i"><range min="15" max="3600"/><default>60</default>
+      <summary>Seconds between quota refreshes</summary></key>
+    <key name="session-check-count" type="i"><range min="0" max="30"/><default>8</default>
+      <summary>Recent kernels per account checked for a running session</summary></key>
+    <key name="active-poll-interval" type="i"><range min="5" max="300"/><default>15</default>
+      <summary>Seconds between refreshes while something is running</summary></key>
+    <key name="notify-on-finish" type="b"><default>true</default></key>
+
+    <!-- Panel -->
+    <key name="panel-mode" enum="org.gnome.shell.extensions.kaggle-status.PanelMode"><default>'combined'</default></key>
+    <key name="panel-resource" enum="org.gnome.shell.extensions.kaggle-status.Resource"><default>'gpu'</default></key>
+    <key name="value-mode" enum="org.gnome.shell.extensions.kaggle-status.ValueMode"><default>'used'</default></key>
+    <key name="show-percent" type="b"><default>true</default></key>
+    <key name="running-badge" enum="org.gnome.shell.extensions.kaggle-status.Badge"><default>'when-running'</default></key>
+    <key name="panel-position" enum="org.gnome.shell.extensions.kaggle-status.Position"><default>'right'</default></key>
+    <key name="panel-index" type="i"><range min="0" max="20"/><default>0</default></key>
+    <key name="ring-size" type="i"><range min="12" max="48"/><default>22</default></key>
+    <key name="ring-stroke" type="i"><range min="2" max="10"/><default>3</default></key>
+    <key name="warn-threshold" type="i"><range min="1" max="100"/><default>75</default></key>
+    <key name="crit-threshold" type="i"><range min="1" max="100"/><default>90</default></key>
+    <key name="color-ok" type="s"><default>'#20beff'</default></key>
+    <key name="color-warn" type="s"><default>'#f5a524'</default></key>
+    <key name="color-crit" type="s"><default>'#f31260'</default></key>
+    <key name="color-track" type="s"><default>'#8888884d'</default></key>
+    <key name="menu-show-individual" type="b"><default>true</default>
+      <summary>Show per-account quota rows in the menu</summary></key>
+
+    <!-- Accounts: JSON {tokenFileId: {alias, enabled, color}} -->
+    <key name="accounts-config" type="s"><default>'{}'</default></key>
+    <!-- JSON {tokenFileId: {username}} written by the extension for the prefs UI -->
+    <key name="accounts-info" type="s"><default>'{}'</default></key>
+
+    <!-- Kernels -->
+    <key name="run-private" type="b"><default>true</default>
+      <summary>Kernels pushed by "Run with" are private</summary></key>
+    <key name="run-internet" type="b"><default>true</default></key>
+    <key name="browser-page-size" type="i"><range min="10" max="100"/><default>30</default></key>
+    <key name="browser-sort" type="s"><default>'DATE_RUN'</default></key>
+    <key name="output-refresh" type="i"><range min="2" max="60"/><default>5</default></key>
+    <key name="output-max-chars" type="i"><range min="2000" max="500000"/><default>60000</default></key>
+    <key name="output-font-size" type="i"><range min="8" max="20"/><default>10</default></key>
+  </schema>
+</schemalist>

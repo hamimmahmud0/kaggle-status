@@ -1,0 +1,12 @@
+import {combineQuotas, pct, levelFor, parseColor, toHex, formatHours, prepareNotebookSource, formatRemaining} from '../src/lib/model.js';
+const eq = (a, b, m) => { if (JSON.stringify(a) !== JSON.stringify(b)) throw new Error(`${m}: ${JSON.stringify(a)} != ${JSON.stringify(b)}`); };
+const c = combineQuotas([{gpu: {used: 3600, reserved: 0, total: 108000}, tpu: null}, {gpu: {used: 7200, reserved: 3600, total: 108000}, tpu: {used: 0, reserved: 0, total: 72000}}]);
+eq(c.gpu, {used: 10800, reserved: 3600, total: 216000}, 'combine');
+eq(Math.round(pct(c.gpu) * 100) / 100, 6.67, 'pct');
+eq(levelFor(80, 75, 90), 'warn', 'level');
+eq(toHex(parseColor('#20beff')), '#20beff', 'color');
+eq(parseColor('rgb(255,0,0)').slice(0, 3), [1, 0, 0], 'rgb');
+eq(formatHours(108000), '30h', 'hours'); eq(formatHours(5400), '1.5h', 'hours2');
+eq(JSON.parse(prepareNotebookSource('{"cells":[{"cell_type":"code","outputs":[1],"source":["a","b"]}]}')).cells[0], {cell_type: 'code', outputs: [], source: 'ab'}, 'nb');
+eq(formatRemaining('2026-01-02T00:00:00Z', Date.parse('2026-01-01T00:00:00Z')), '1d 0h', 'remaining');
+print('model tests ok');
